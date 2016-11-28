@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1479221848,
+	"version": 1480116420,
 	"fileList": [
 		"data.js",
 		"game.html",
@@ -21,6 +21,8 @@
 		"images/watchpoint.png",
 		"images/door-sheet0.png",
 		"images/wall.png",
+		"images/camera-sheet0.png",
+		"images/reticle-sheet0.png",
 		"images/player-sheet0.png",
 		"images/deadbody-sheet0.png",
 		"images/deadbody-sheet1.png",

@@ -1,5 +1,5 @@
 ﻿CACHE MANIFEST
-#1479221848
+#1480116420
 data.js
 game.html
 c2runtime.js
@@ -20,6 +20,8 @@ images/textvisibilityzone.png
 images/watchpoint.png
 images/door-sheet0.png
 images/wall.png
+images/camera-sheet0.png
+images/reticle-sheet0.png
 images/player-sheet0.png
 images/deadbody-sheet0.png
 images/deadbody-sheet1.png
