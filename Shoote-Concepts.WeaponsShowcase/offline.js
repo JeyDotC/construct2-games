@@ -1,8 +1,7 @@
 ﻿{
-	"version": 1480116420,
+	"version": 1488513785,
 	"fileList": [
 		"data.js",
-		"game.html",
 		"c2runtime.js",
 		"jquery-2.1.1.min.js",
 		"images/9mm-sheet0.png",
@@ -19,10 +18,12 @@
 		"images/levelportal.png",
 		"images/textvisibilityzone.png",
 		"images/watchpoint.png",
+		"images/doorhandle.png",
 		"images/door-sheet0.png",
 		"images/wall.png",
 		"images/camera-sheet0.png",
 		"images/reticle-sheet0.png",
+		"images/debugtiledbackground.png",
 		"images/player-sheet0.png",
 		"images/deadbody-sheet0.png",
 		"images/deadbody-sheet1.png",
