@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1505762042,
+	"version": 1506106633,
 	"fileList": [
 		"data.js",
 		"game.html",
