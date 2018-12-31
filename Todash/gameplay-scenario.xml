@@ -1,28 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dialogs>
-	<dialog name="RadioLog1">
-		<line portrait="RadioLog1" mood="neutral">Where's the battery!</line>
-		<line portrait="RadioLog2" mood="neutral">Come back here, you bastard!</line>
-		<line portrait="RadioLog1" mood="neutral">No... no... you took the battery?!</line>
-		<line portrait="RadioLog2" mood="neutral">I told you we better stay in the bas- </line>
-		<line portrait="RadioLog2" mood="neutral"> shoot to the head, Dereck!</line>
-		<line portrait="RadioLog2" mood="neutral">I knew you were going to betray us...</line>
-		<line portrait="RadioLog2" mood="neutral">now come here and die with us!</line>
-		<line portrait="RadioLog1" mood="neutral">Man, I'm hurt, lets- </line>
-		<line portrait="RadioLog1" mood="neutral"> lets go back to the laboratory!</line>
-		<line portrait="RadioLog2" mood="neutral">No way moron, even if I made it to your position.</line>
-		<line portrait="RadioLog2" mood="neutral">Only Mandy can open the door...</line>
-		<line portrait="RadioLog1" mood="neutral">Just... just come with her!</line>
-		<line portrait="RadioLog2" mood="neutral">HA HA HA HA HA HA!</line>
-		<line portrait="RadioLog2" mood="neutral">I'll do my best to bring what is left of her</line>
-		<line portrait="RadioLog2" mood="neutral">But only because you made me laugh...</line>
-		<line portrait="RadioLog2" mood="neutral">HA HA HA HA HA HA!</line>
-		<line portrait="RadioLog2" mood="neutral">---- CHANNEL CLOSED -----</line>
-		<line portrait="RadioLog1" mood="neutral">No, Roland, please</line>
-		<line portrait="RadioLog1" mood="neutral">Roland?</line>
-		<line portrait="RadioLog1" mood="neutral">Oh shit! no, NO!</line>
-		<line portrait="RadioLog1" mood="neutral">AAAAAAAARRRGHGHGH!</line>
-		<line portrait="RadioLog1" mood="neutral">---- LOG CLOSED: HUMAN RESOURCE DESTROYED</line>
+	<dialog name="Movement">
+		<line portrait="RadioLog1" mood="neutral">Move around with 
+    WASD</line>
+		<line portrait="RadioLog1" mood="neutral">Look around with the mouse</line>
 		<line portrait="RadioLog1" mood="neutral"></line>
+	</dialog>
+    <dialog name="BasicCombat">
+		<line portrait="RadioLog1" mood="neutral">Shoot with LEFT CLICK</line>
+		<line portrait="RadioLog1" mood="neutral"></line>
+	</dialog>
+    <dialog name="BasicAbilities">
+		<line portrait="RadioLog1" mood="neutral">Special Abilities are invoked with RIGHT CLICK</line>
+		<line portrait="RadioLog1" mood="neutral">You can switch abilities with TAB</line>
+        <line portrait="RadioLog1" mood="neutral"></line>
 	</dialog>
 </dialogs>
