@@ -31880,6 +31880,7 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Audio.prototype.acts.SetVolume,
 	cr.behaviors.Rex_FSM.prototype.exps.CurState,
 	cr.behaviors.Rex_FSM.prototype.exps.PreState,
+	cr.system_object.prototype.exps.lowercase,
 	cr.system_object.prototype.exps.layoutname,
 	cr.behaviors.Identity.prototype.cnds.OnTagged,
 	cr.plugins_.Browser.prototype.acts.Close,
