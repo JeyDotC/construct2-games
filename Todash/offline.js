@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1546279590,
+	"version": 1547702558,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -25,7 +25,6 @@
 		"images/hud_pickablegun-sheet0.png",
 		"images/hud_pickablegun-sheet1.png",
 		"images/hud_dialogfaces-sheet0.png",
-		"images/hud_dialogfaces-sheet1.png",
 		"images/hud_dialogbackground.png",
 		"images/healthpack-sheet0.png",
 		"images/ammunition-sheet0.png",
@@ -70,6 +69,9 @@
 		"images/deadbody-sheet0.png",
 		"images/shooterconceptsfirstscreen-sheet0.png",
 		"images/playerbackup-sheet0.png",
+		"images/npc-sheet0.png",
+		"images/savepod-sheet0.png",
+		"images/savepod-sheet1.png",
 		"media/assaultriffle.ogg",
 		"media/sniperriffle.ogg",
 		"media/shotgun.ogg",

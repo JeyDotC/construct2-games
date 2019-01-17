@@ -2,7 +2,7 @@
 <dialogs>
 	<dialog name="Movement">
 		<line portrait="RadioLog1" mood="neutral">Move around with 
-    WASD</line>
+WASD</line>
 		<line portrait="RadioLog1" mood="neutral">Look around with the mouse</line>
 		<line portrait="RadioLog1" mood="neutral"></line>
 	</dialog>
@@ -15,4 +15,26 @@
 		<line portrait="RadioLog1" mood="neutral">You can switch abilities with TAB</line>
         <line portrait="RadioLog1" mood="neutral"></line>
 	</dialog>
+    <dialog name="Johny">
+        <line portrait="Johny" mood="glad">Hey! I was waiting for you!</line>
+        <line portrait="Johny" mood="suspicius">Take this, I am pretty sure it will help you.</line>
+        <line portrait="Johny" mood="neutral"></line>
+    </dialog>
+    <dialog name="David">
+        <line portrait="Johny" mood="cautious">Psst!   </line>
+        <line portrait="Johny" mood="cautious">Do you see that guy?</line>
+        <line portrait="Johny" mood="cautious">Be careful! he is hard to take down and fast as hell!</line>
+        <line portrait="Johny" mood="neutral"></line>
+    </dialog>
+    <dialog name="Travis1">
+        <line portrait="Johny" mood="glad">Oh, you finally got here!</line>
+        <line portrait="Johny" mood="suspicius">Let me show you our latest invention.</line>
+        <line portrait="Johny" mood="neutral"></line>
+    </dialog>
+    <dialog name="Travis2">
+        <line portrait="Johny" mood="glad">This is the corruption power.</line>
+        <line portrait="Johny" mood="glad">It allows you to convert an anemy into an allied...</line>
+        <line portrait="Johny" mood="suspicius">Or posess it, buahahaha!</line>
+        <line portrait="Johny" mood="neutral"></line>
+    </dialog>
 </dialogs>
