@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1581107555,
+	"version": 1584044391,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -31,6 +31,7 @@
 		"images/pistolman-sheet0.png",
 		"images/pistolman-sheet1.png",
 		"images/pistolman-sheet2.png",
+		"images/enemyfairy-sheet0.png",
 		"images/weapon-sheet0.png",
 		"images/levelportal.png",
 		"images/textvisibilityzone.png",
@@ -40,6 +41,7 @@
 		"images/jumptrigger.png",
 		"images/musictrigger.png",
 		"images/makevisible.png",
+		"images/fairyguide.png",
 		"images/door-sheet0.png",
 		"images/wall.png",
 		"images/stairs.png",
@@ -51,6 +53,7 @@
 		"images/overlay.png",
 		"images/dialog.png",
 		"images/playerinvoker-sheet0.png",
+		"images/pistolmaninvoker-sheet0.png",
 		"images/playertorso-sheet0.png",
 		"images/deadbody-sheet0.png",
 		"images/shooterconceptsfirstscreen-sheet0.png",
@@ -86,6 +89,7 @@
 		"icon-114.png",
 		"icon-128.png",
 		"icon-256.png",
-		"loading-logo.png"
+		"loading-logo.png",
+		"pathfind.js"
 	]
 }
