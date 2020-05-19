@@ -27215,51 +27215,6 @@ cr.behaviors.Pathfinding = function(runtime)
 	};
 	behaviorProto.exps = new Exps();
 }());
-;
-;
-cr.behaviors.Persist = function(runtime)
-{
-	this.runtime = runtime;
-};
-(function ()
-{
-	var behaviorProto = cr.behaviors.Persist.prototype;
-	behaviorProto.Type = function(behavior, objtype)
-	{
-		this.behavior = behavior;
-		this.objtype = objtype;
-		this.runtime = behavior.runtime;
-	};
-	var behtypeProto = behaviorProto.Type.prototype;
-	behtypeProto.onCreate = function()
-	{
-	};
-	behaviorProto.Instance = function(type, inst)
-	{
-		this.type = type;
-		this.behavior = type.behavior;
-		this.inst = inst;				// associated object instance to modify
-		this.runtime = type.runtime;
-	};
-	var behinstProto = behaviorProto.Instance.prototype;
-	behinstProto.onCreate = function()
-	{
-		this.myProperty = this.properties[0];
-	};
-	behinstProto.onDestroy = function ()
-	{
-	};
-	behinstProto.tick = function ()
-	{
-		var dt = this.runtime.getDt(this.inst);
-	};
-	function Cnds() {};
-	behaviorProto.cnds = new Cnds();
-	function Acts() {};
-	behaviorProto.acts = new Acts();
-	function Exps() {};
-	behaviorProto.exps = new Exps();
-}());
 var Box2D = (function () {
 function c(a){throw a;}var d=void 0,aa=!0,ba=null,ca=!1,e;e||(e=eval("(function() { try { return Module || {} } catch(e) { return {} } })()"));var da={},ea;for(ea in e)e.hasOwnProperty(ea)&&(da[ea]=e[ea]);var fa="object"===typeof process&&"function"===typeof require,ga="object"===typeof window,ia="function"===typeof importScripts,ja=!ga&&!fa&&!ia;
 if(fa){e.print||(e.print=function(a){process.stdout.write(a+"\n")});e.printErr||(e.printErr=function(a){process.stderr.write(a+"\n")});var ka=require("fs"),la=require("path");e.read=function(a,b){var a=la.normalize(a),f=ka.readFileSync(a);!f&&a!=la.resolve(a)&&(a=path.join(__dirname,"..","src",a),f=ka.readFileSync(a));f&&!b&&(f=f.toString());return f};e.readBinary=function(a){return e.read(a,aa)};e.load=function(a){ma(read(a))};e.thisProgram=1<process.argv.length?process.argv[1].replace(/\\/g,"/"):
@@ -32273,20 +32228,19 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.circular_list,
 	cr.plugins_.Button,
 	cr.plugins_.Dictionary,
-	cr.plugins_.Particles,
-	cr.plugins_.List,
-	cr.plugins_.LocalStorage,
-	cr.plugins_.Keyboard,
 	cr.plugins_.Mouse,
-	cr.plugins_.TiledBg,
-	cr.plugins_.Text,
+	cr.plugins_.Particles,
+	cr.plugins_.Keyboard,
+	cr.plugins_.LocalStorage,
+	cr.plugins_.List,
 	cr.plugins_.Sprite,
+	cr.plugins_.Text,
 	cr.plugins_.Spritefont2,
+	cr.plugins_.TiledBg,
 	cr.behaviors.destroy,
 	cr.behaviors.Pin,
 	cr.behaviors.Fade,
 	cr.behaviors.Anchor,
-	cr.behaviors.Persist,
 	cr.behaviors.LOS,
 	cr.behaviors.Turret,
 	cr.behaviors.Sin,
@@ -32296,10 +32250,10 @@ cr.getObjectRefTable = function () { return [
 	cr.behaviors.Physics,
 	cr.behaviors.bound,
 	cr.behaviors.scrollto,
+	cr.behaviors.jj_Weapon,
 	cr.behaviors.Platform,
 	cr.behaviors.Bullet,
 	cr.behaviors.solid,
-	cr.behaviors.jj_Weapon,
 	cr.behaviors.Rotate,
 	cr.system_object.prototype.cnds.IsGroupActive,
 	cr.system_object.prototype.cnds.OnLayoutStart,
@@ -32451,16 +32405,19 @@ cr.getObjectRefTable = function () { return [
 	cr.behaviors.jj_Weapon.prototype.cnds.isReloadFinish,
 	cr.behaviors.jj_Weapon.prototype.cnds.isReloadCanceled,
 	cr.plugins_.Audio.prototype.acts.Stop,
+	cr.plugins_.Sprite.prototype.cnds.OnAnyAnimFinished,
+	cr.plugins_.Sprite.prototype.cnds.IsAnimPlaying,
 	cr.plugins_.Sprite.prototype.exps.ImagePointX,
 	cr.plugins_.Sprite.prototype.exps.ImagePointY,
 	cr.behaviors.Bullet.prototype.exps.Speed,
 	cr.plugins_.Particles.prototype.acts.Destroy,
 	cr.behaviors.Bullet.prototype.cnds.CompareTravelled,
 	cr.plugins_.Sprite.prototype.acts.SetVisible,
-	cr.plugins_.Sprite.prototype.cnds.OnAnimFinished,
-	cr.plugins_.Sprite.prototype.cnds.OnFrameChanged,
+	cr.behaviors.jj_Weapon.prototype.acts.disableWeapon,
 	cr.plugins_.Sprite.prototype.exps.AnimationFrameCount,
 	cr.plugins_.Sprite.prototype.exps.AnimationSpeed,
+	cr.plugins_.Sprite.prototype.cnds.OnAnimFinished,
+	cr.plugins_.Sprite.prototype.cnds.OnFrameChanged,
 	cr.behaviors.Physics.prototype.acts.ApplyImpulseAtAngle,
 	cr.system_object.prototype.exps.angle,
 	cr.system_object.prototype.acts.SetGroupActive,
@@ -32525,7 +32482,7 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Mouse.prototype.cnds.OnObjectClicked,
 	cr.system_object.prototype.acts.WaitForSignal,
 	cr.plugins_.Function.prototype.acts.CallExpression,
-	cr.plugins_.Sprite.prototype.cnds.IsAnimPlaying,
+	cr.behaviors.jj_Weapon.prototype.acts.setBullet,
 	cr.system_object.prototype.cnds.OnLayoutEnd,
 	cr.plugins_.Audio.prototype.cnds.IsTagPlaying,
 	cr.plugins_.TiledBg.prototype.cnds.IsBoolInstanceVarSet,
@@ -32537,5 +32494,6 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Text.prototype.acts.SetBoolInstanceVar,
 	cr.plugins_.LocalStorage.prototype.cnds.OnItemMissing,
 	cr.plugins_.List.prototype.cnds.CompareY,
-	cr.plugins_.List.prototype.acts.SetY
+	cr.plugins_.List.prototype.acts.SetY,
+	cr.plugins_.Arr.prototype.acts.Clear
 ];};
