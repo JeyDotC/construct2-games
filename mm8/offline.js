@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1589865717,
+	"version": 1589987703,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -57,6 +57,7 @@
 		"images/gamefont.png",
 		"images/playerinvoker-sheet0.png",
 		"images/pistolmaninvoker-sheet0.png",
+		"images/singleusepickablespawner-sheet0.png",
 		"images/playertorso-sheet0.png",
 		"images/deadbody-sheet0.png",
 		"images/shooterconceptsfirstscreen-sheet0.png",

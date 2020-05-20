@@ -27215,6 +27215,51 @@ cr.behaviors.Pathfinding = function(runtime)
 	};
 	behaviorProto.exps = new Exps();
 }());
+;
+;
+cr.behaviors.Persist = function(runtime)
+{
+	this.runtime = runtime;
+};
+(function ()
+{
+	var behaviorProto = cr.behaviors.Persist.prototype;
+	behaviorProto.Type = function(behavior, objtype)
+	{
+		this.behavior = behavior;
+		this.objtype = objtype;
+		this.runtime = behavior.runtime;
+	};
+	var behtypeProto = behaviorProto.Type.prototype;
+	behtypeProto.onCreate = function()
+	{
+	};
+	behaviorProto.Instance = function(type, inst)
+	{
+		this.type = type;
+		this.behavior = type.behavior;
+		this.inst = inst;				// associated object instance to modify
+		this.runtime = type.runtime;
+	};
+	var behinstProto = behaviorProto.Instance.prototype;
+	behinstProto.onCreate = function()
+	{
+		this.myProperty = this.properties[0];
+	};
+	behinstProto.onDestroy = function ()
+	{
+	};
+	behinstProto.tick = function ()
+	{
+		var dt = this.runtime.getDt(this.inst);
+	};
+	function Cnds() {};
+	behaviorProto.cnds = new Cnds();
+	function Acts() {};
+	behaviorProto.acts = new Acts();
+	function Exps() {};
+	behaviorProto.exps = new Exps();
+}());
 var Box2D = (function () {
 function c(a){throw a;}var d=void 0,aa=!0,ba=null,ca=!1,e;e||(e=eval("(function() { try { return Module || {} } catch(e) { return {} } })()"));var da={},ea;for(ea in e)e.hasOwnProperty(ea)&&(da[ea]=e[ea]);var fa="object"===typeof process&&"function"===typeof require,ga="object"===typeof window,ia="function"===typeof importScripts,ja=!ga&&!fa&&!ia;
 if(fa){e.print||(e.print=function(a){process.stdout.write(a+"\n")});e.printErr||(e.printErr=function(a){process.stderr.write(a+"\n")});var ka=require("fs"),la=require("path");e.read=function(a,b){var a=la.normalize(a),f=ka.readFileSync(a);!f&&a!=la.resolve(a)&&(a=path.join(__dirname,"..","src",a),f=ka.readFileSync(a));f&&!b&&(f=f.toString());return f};e.readBinary=function(a){return e.read(a,aa)};e.load=function(a){ma(read(a))};e.thisProgram=1<process.argv.length?process.argv[1].replace(/\\/g,"/"):
@@ -32228,15 +32273,15 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.circular_list,
 	cr.plugins_.Button,
 	cr.plugins_.Dictionary,
-	cr.plugins_.Mouse,
-	cr.plugins_.Particles,
-	cr.plugins_.Keyboard,
-	cr.plugins_.LocalStorage,
 	cr.plugins_.List,
-	cr.plugins_.Sprite,
-	cr.plugins_.Text,
-	cr.plugins_.Spritefont2,
+	cr.plugins_.LocalStorage,
+	cr.plugins_.Mouse,
+	cr.plugins_.Keyboard,
+	cr.plugins_.Particles,
 	cr.plugins_.TiledBg,
+	cr.plugins_.Sprite,
+	cr.plugins_.Spritefont2,
+	cr.plugins_.Text,
 	cr.behaviors.destroy,
 	cr.behaviors.Pin,
 	cr.behaviors.Fade,
@@ -32250,6 +32295,7 @@ cr.getObjectRefTable = function () { return [
 	cr.behaviors.Physics,
 	cr.behaviors.bound,
 	cr.behaviors.scrollto,
+	cr.behaviors.Persist,
 	cr.behaviors.jj_Weapon,
 	cr.behaviors.Platform,
 	cr.behaviors.Bullet,
@@ -32274,7 +32320,6 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Sprite.prototype.acts.SetInstanceVar,
 	cr.system_object.prototype.acts.SetVar,
 	cr.plugins_.Function.prototype.exps.Call,
-	cr.plugins_.Browser.prototype.acts.ConsoleLog,
 	cr.plugins_.Sprite.prototype.acts.Destroy,
 	cr.behaviors.Pin.prototype.acts.Pin,
 	cr.plugins_.Text.prototype.acts.SetVisible,
@@ -32326,11 +32371,17 @@ cr.getObjectRefTable = function () { return [
 	cr.system_object.prototype.cnds.CompareVar,
 	cr.behaviors.jj_Weapon.prototype.acts.makeShoot,
 	cr.plugins_.Keyboard.prototype.cnds.IsKeyDown,
-	cr.behaviors.Platform.prototype.acts.SimulateControl,
 	cr.plugins_.Sprite.prototype.cnds.IsBoolInstanceVarSet,
+	cr.behaviors.Platform.prototype.acts.SimulateControl,
 	cr.behaviors.Platform.prototype.acts.FallThrough,
+	cr.plugins_.Sprite.prototype.cnds.IsAnimPlaying,
+	cr.behaviors.Platform.prototype.cnds.IsMoving,
 	cr.plugins_.Mouse.prototype.cnds.OnWheel,
 	cr.system_object.prototype.cnds.Compare,
+	cr.behaviors.Platform.prototype.cnds.OnJump,
+	cr.behaviors.Platform.prototype.cnds.OnLand,
+	cr.behaviors.Platform.prototype.cnds.OnMove,
+	cr.behaviors.Platform.prototype.cnds.OnStop,
 	cr.behaviors.LOS.prototype.cnds.HasLOSToObject,
 	cr.plugins_.Sprite.prototype.cnds.CompareX,
 	cr.plugins_.Sprite.prototype.cnds.CompareY,
@@ -32406,7 +32457,6 @@ cr.getObjectRefTable = function () { return [
 	cr.behaviors.jj_Weapon.prototype.cnds.isReloadCanceled,
 	cr.plugins_.Audio.prototype.acts.Stop,
 	cr.plugins_.Sprite.prototype.cnds.OnAnyAnimFinished,
-	cr.plugins_.Sprite.prototype.cnds.IsAnimPlaying,
 	cr.plugins_.Sprite.prototype.exps.ImagePointX,
 	cr.plugins_.Sprite.prototype.exps.ImagePointY,
 	cr.behaviors.Bullet.prototype.exps.Speed,
@@ -32431,6 +32481,10 @@ cr.getObjectRefTable = function () { return [
 	cr.system_object.prototype.exps.max,
 	cr.plugins_.Particles.prototype.exps.Angle,
 	cr.plugins_.Text.prototype.acts.SetText,
+	cr.plugins_.TiledBg.prototype.cnds.PickDistance,
+	cr.plugins_.Text.prototype.exps.X,
+	cr.plugins_.Text.prototype.exps.Y,
+	cr.plugins_.TiledBg.prototype.acts.SetVisible,
 	cr.system_object.prototype.cnds.OnSaveComplete,
 	cr.plugins_.Arr.prototype.cnds.Contains,
 	cr.plugins_.Audio.prototype.acts.Play,
@@ -32463,8 +32517,6 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.List.prototype.cnds.CompareSelectedText,
 	cr.plugins_.List.prototype.exps.SelectedText,
 	cr.plugins_.Text.prototype.acts.SetInstanceVar,
-	cr.plugins_.Text.prototype.exps.X,
-	cr.plugins_.Text.prototype.exps.Y,
 	cr.system_object.prototype.acts.SetLayerVisible,
 	cr.system_object.prototype.acts.SetTimescale,
 	cr.plugins_.Text.prototype.cnds.IsBoolInstanceVarSet,
@@ -32488,6 +32540,7 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.TiledBg.prototype.cnds.IsBoolInstanceVarSet,
 	cr.plugins_.Audio.prototype.acts.PlayByName,
 	cr.plugins_.Audio.prototype.acts.SetVolume,
+	cr.system_object.prototype.exps["int"],
 	cr.plugins_.Browser.prototype.acts.Close,
 	cr.plugins_.LocalStorage.prototype.acts.CheckItemExists,
 	cr.plugins_.LocalStorage.prototype.cnds.OnItemExists,
